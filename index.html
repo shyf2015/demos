@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>瀑布流布局</title>
+<style type="text/css">
+body, ul, li img{ 
+	margin: 0; 
+	padding: 0; 
+}
+#box { 
+	position: relative; 
+}
+ul{
+	list-style: none;
+}
+li { 
+	position: absolute;  
+	text-align: center; 
+	margin: 10px;
+	left: 0; 
+	top: 0; 
+	transition: all 1s;
+}
+img { 
+	width: 250px; 
+	display: block; 
+	border: 0 ;
+}
+</style>
+</head>
+<body>
+<ul id="box">
+  <li><img src="img/001.jpg" height='180px'></li>
+  <li><img src="img/002.jpg" height='220px'></li>
+  <li><img src="img/003.jpg" height='170px'></li>
+  <li><img src="img/004.jpg" height='225px'></li>
+  <li><img src="img/005.jpg" height='210px'></li>
+  <li><img src="img/006.jpg" height='200px'></li>
+  <li><img src="img/007.jpg" height='195px'></li>
+  <li><img src="img/008.jpg" height='200px'></li>
+  <li><img src="img/009.jpg" height='220px'></li>
+  <li><img src="img/010.jpg" height='210px'></li>
+  <li><img src="img/011.jpg" height='190px'></li>
+  <li><img src="img/012.jpg" height='205px'></li>
+  <li><img src="img/013.jpg" height='210px'></li>
+  <li><img src="img/014.jpg" height='230px'></li>
+  <li><img src="img/015.jpg" height='235px'></li>
+</ul>
+<script src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script>
+require.config({
+	baseUrl: 'js/',
+	paths: {
+		jquery: '//cdn.bootcss.com/jquery/3.1.0/jquery.min.js'
+	}
+});
+require(['pinterest'], function (pubu) {
+	pubu();
+	window.onresize=function(){
+		pubu();
+	}
+});
+</script>
+</body>
+</html>
+
